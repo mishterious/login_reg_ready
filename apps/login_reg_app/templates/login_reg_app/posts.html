@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Login and Registration | Success</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <style>
+        .block {
+            border: 1px solid black;
+            display: block;
+            padding: 10px;
+        }
+        .i_b{
+            display: inline-block;
+            vertical-align: top;
+        }
+        .i_r{
+            text-align: right;
+        }
+        .m_l{
+            margin-left: 60%;
+        }
+        .q_l{
+            width: 250px;
+            height: 180px;
+        }
+        table, td, th {
+            border: 1px solid black;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td {
+            height: 50px;
+            vertical-align: bottom;
+        }
+        a{
+            padding: 0 5px 0 5px;
+        }
+        p{
+            margin: 5px;
+        }
+    </style>
+    <body>
+        <div class> 
+            <a href="/quotes" class='m_l'>Home</a>
+            <a href="/logout" class = 'i_b'>Logout</a>
+        </div>
+        <h2>Posts by {{user.alias}} </h2>
+
+        <div class="i_b">
+            <h4>Quotable Quotes</h4>
+                {% for my in quote %}
+                    <div class="q_l block">
+                        <p>{{ my.quote_by }}: {{my.insp}} <p>
+                        <h6>Posted by <a href="/see_user_posts/{{ my.user.id }}">{{my.user.name}}</a></h6>
+                        <a href="/add_to_list/{{my.id}}">Add to My list</a>
+                    </div>
+                {% endfor %}
+        </div>
+    </body>
+</html>

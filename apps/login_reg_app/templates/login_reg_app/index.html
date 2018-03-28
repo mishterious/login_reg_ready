@@ -31,12 +31,12 @@
             <h1>Definitely Ready For the Black Belt</h1>
             <form action="/add_user" method="post">
                 {% csrf_token %}
-                <p>First Name:<input type="text" name='first_name'></p>
-                <p>Last Name:<input type="text" name='last_name'></p>
-                <p>Username(Email):<input type="text" name='email'></p>
+                <p>Name:<input type="text" name='name'></p>
+                <p>Alias:<input type="text" name='alias'></p>
+                <p>Email:<input type="text" name='email'></p>
                 <p>Password:<input type="password" name='password'></p>
                 <p>Confirm password:<input type="password" name='password_confirm'></p>
-                <p>Date Hired:<input type="date" name='hired'></p>
+                <p>Date of Birth:<input type="date" name='birthday'></p>
                 <input type="submit" value="Register">
             </form>
 
