@@ -76,18 +76,17 @@ def add_quote(request):
     return redirect('/quotes')
 
 def see_user_posts(request, id):
-    # count = 0
-    # counter = User.objects.get(id=id)
-    # for i in counter:
-    #     count += 1
-    # return count
+    num = 0
+    counter = list(Quote.objects.filter(user=id))
+    
+    for i in counter:
+        num = num+1
+
     data = {
         'user': User.objects.get(id=id),
-        'quote': Quote.objects.filter(user=id)
-
+        'quote': Quote.objects.filter(user=id),
+        'count': num
     }
-    print data['quote']
-
     return render(request, 'login_reg_app/posts.html', data)
 
 

@@ -23,7 +23,7 @@
         }
         .q_l{
             width: 250px;
-            height: 180px;
+            height: 150px;
         }
         table, td, th {
             border: 1px solid black;
@@ -49,15 +49,15 @@
             <a href="/logout" class = 'i_b'>Logout</a>
         </div>
         <h2>Posts by {{user.alias}} </h2>
-
+        <p>{{ count }}</p>
         <div class="i_b">
             <h4>Quotable Quotes</h4>
                 {% for my in quote %}
                     <div class="q_l block">
                         <p>{{ my.quote_by }}: {{my.insp}} <p>
                         <h6>Posted by <a href="/see_user_posts/{{ my.user.id }}">{{my.user.name}}</a></h6>
-                        <a href="/add_to_list/{{my.id}}">Add to My list</a>
                     </div>
+                    <h4>{{ count.counter}}</h4>
                 {% endfor %}
         </div>
     </body>
